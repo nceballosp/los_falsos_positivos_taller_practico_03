@@ -2,7 +2,7 @@
 
 **Curso:** Fundamentos en Ciencia de Datos — Maestría en Ciencia de Datos y Analítica, EAFIT  
 **Fecha límite de entrega:** Viernes 7 de Agosto  
-**Fecha de entrega real:** [/08/2026]  
+**Fecha de entrega real:** [05/08/2026]  
 
 **Integrantes del equipo:**
 
@@ -117,15 +117,9 @@ pip install -r requirements.txt
 jupyter notebook notebooks/taller_practico_03.ipynb
 ```
 
-El notebook define una semilla aleatoria (`RANDOM_SEED = 7`) y contiene lógica de carga para evitar depender exclusivamente del orden de ejecución de celdas. Para reproducir los resultados, se debe ejecutar el notebook de arriba hacia abajo y verificar que las rutas de los datos correspondan a la estructura del repositorio.
-
 ## Consideraciones metodológicas
 
 - La prueba de Granger evalúa precedencia temporal y capacidad predictiva incremental; no demuestra causalidad física por sí sola.
 - La centralidad depende de cómo se construye el grafo. Una red bipartita o de conexiones directas puede producir valores de Betweenness iguales a cero.
 - La relación entre NDVI, pendiente y varianza del viento debe validarse con información topográfica y agronómica adicional antes de tomar decisiones de inversión.
 - La comparación de AIC solo es válida entre modelos ajustados sobre la misma muestra y con una definición consistente de la variable objetivo y de las exógenas.
-
-## Equipo
-
-El trabajo fue realizado por Eduardo Andres Piñeros Manjarres, Juan Jose Vasquez Gomez y Natalia Ceballos Posada, como parte del curso Fundamentos en Ciencia de Datos de la Maestría en Ciencia de Datos y Analítica de EAFIT.
