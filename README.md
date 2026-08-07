@@ -32,17 +32,15 @@ El trabajo integra análisis exploratorio, limpieza de datos, visualización, an
 
 ```text
 .
-├── data/                         # Datos utilizados por el análisis
-├── guias/                        # Material de orientación del taller
-├── informe/figuras/              # Figuras de apoyo para P1, P2 y P3
-│   ├── p1.png
-│   ├── p2.png
-│   └── p3.png
-├── informe/                     # Informe técnico en LaTeX y PDF compilado
+├── data/raw  
+├── docs/ 
+├── guias/                       
+├── informe/figuras/             
+├── informe/                  
 ├── notebooks/
-│   └── taller_practico_03.ipynb  # Desarrollo principal del taller
-├── requirements.txt              # Dependencias de Python
-└── README.md                     # Documentación del proyecto
+│   └── taller_practico_03.ipynb  
+├── requirements.txt              
+└── README.md                  
 ```
 
 ## Flujo de trabajo realizado
@@ -108,12 +106,12 @@ La evidencia gráfica se encuentra en [`informe/figuras/p3.png`](informe/figuras
 Se recomienda utilizar el entorno virtual del proyecto e instalar las dependencias declaradas en `requirements.txt`:
 
 ```bash
-python -m venv .venv
+git clone https://github.com/nceballosp/los_falsos_positivos_taller_practico_03.git
 
-# Windows PowerShell
-.venv\\Scripts\\Activate.ps1
+cd los_falsos_positivos_taller_practico_03
 
 pip install -r requirements.txt
+
 jupyter notebook notebooks/taller_practico_03.ipynb
 ```
 
