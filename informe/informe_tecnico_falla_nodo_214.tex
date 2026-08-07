@@ -104,6 +104,35 @@ Se ajustaron dos modelos SARIMAX para la demanda \texttt{Ener\_1}. El modelo bas
 
 El AIC no mejora al incluir la importancia del nodo: aumenta en 1.744 unidades. Dado que un AIC menor es preferible, la variable de centralidad no aporta capacidad explicativa suficiente para justificar su inclusión en esta especificación. La conclusión es específica del conjunto de datos, del periodo analizado y de la forma en que se construyó la centralidad; no implica que la topología sea irrelevante en todos los horizontes o regímenes operativos.
 
+\section{Preguntas de Verificacion}
+
+\begin{enumerate}
+    \item \textbf{Sobre la Estacionariedad: ¿Por qué no es válido aplicar un análisis de correlación de Pearson directamente sobre una serie con tendencia (como el NDVI o el Precio de Exportación)?}
+
+
+    El coeficiente de Pearson mide covarianza lineal entre dos variables, y su interpretación válida exige que ambas series tengan media y varianza constantes en el tiempo. Cuando una serie tiene tendencia, como el NDVI, Pearson arrojará una correlación alta aunque no exista relación causal ni estructural entre ellas. Tambien, la fórmula de Pearson asume que la dispersión alrededor de la media es estable, con tendencia, la media cambia en cada punto, por lo que el estadístico pierde su interpretación probabilística
+    
+
+    \item \textbf{Sobre el SNR: ¿Qué impacto tuvo el ruido de 5dB en la estimación de los coeficientes del modelo ARMA comparado con la versión Clean?}
+
+
+    Un SNR de 5dB es relativamente bajo, por lo que el impacto sobre la estimación ARMA suele incluir sesgo en los coeficientes, especialmente en la parte MA: el ruido blanco añadido se confunde con la estructura de media móvil del modelo, deformando las estimaciones de los parámetros MA más que las AR. Ademas, con menor SNR, los intervalos de confianza de los coeficientes se ensanchan, el modelo clean da estimaciones más precisas y estables frente a distintas semillas.
+
+
+    \item \textbf{Sobre la Topología: ¿Cómo cambia la interpretación de un fallo en un sensor si este es un "Bridge"(puente) en el grafo de la red?}
+
+
+    En teoría de grafos, un puente es una arista cuya eliminación desconecta el grafo en dos o más componentes. Que un sensor sea un bridge cambia la interpretación de su fallo. Si falla un sensor no bridge, la red se reconfigura y las rutas alternativas mantienen la conectividad. Si falla un bridge, una parte completa de la red queda incomunicada, sin ninguna ruta alternativa.
+    
+
+    \item  Sobre la Geo-Inteligencia: ¿Cómo influye la posición geográfica en la varianza de la señal capturada?
+
+    La posición geográfica afecta la varianza capturada por un sensor ya que sensores próximos entre sí tienden a mostrar menor varianza relativa entre ellos, mientras que sensores dispersos captan mayor heterogeneidad ambiental.
+
+
+\end{enumerate}
+
+
 \section{Conclusiones técnicas}
 
 \begin{enumerate}
